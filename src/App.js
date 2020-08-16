@@ -3,16 +3,19 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Form from './components/Form';
 import PageContent from './components/PageContent';
-import { ThemeProvider, ThemeContext } from './components/contexts/ThemeContext';
+import { ThemeProvider } from './components/contexts/ThemeContext';
+import { LanguageProvider } from './components/contexts/LanguageContext';
 
 function App() {
   return (
-    <ThemeProvider>
-      <PageContent>
-        <Navbar />
-        <Form  />
-      </ PageContent>
-    </ThemeProvider>
+    <LanguageProvider>
+      <ThemeProvider>
+        <PageContent>
+          <Navbar />
+          <Form  />
+        </ PageContent>
+      </ThemeProvider>
+    </LanguageProvider>
   );
 }
 
